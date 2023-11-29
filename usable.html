@@ -1,0 +1,94 @@
+<div class="slider">
+   <div class="slide-track">
+       <div class="slide">
+           <img src="./Images/facebook.png" alt="" srcset="">
+
+       </div>
+       <div class="slide">
+           <img src="./Images/facebook.png" alt="" srcset="">
+
+       </div>
+
+   </div>
+
+</div>
+second 
+
+<div class="slider-Container">
+   <div class="slide">
+       <img src="./Images/General Secretary_1.jpg" alt="" srcset="">
+
+   </div>
+   <div class="slide">
+       <img src="./Images/Smartest and organised_1.jpg" alt="" srcset="">
+
+   </div>
+</div>
+
+.slider{
+   height: 100px;
+   margin: auto;
+   position: relative;
+   display: flex;
+   place-items: center;
+ }
+ .slide-track{
+   display: flex;
+   animation: scroll 10s linear infinite;
+ }
+ @keyframes scroll {
+   0%{
+     transform: translateX(0);
+   }
+   100%{
+     transform: translateX(calc(-250px ));
+   }
+ }
+ .slide{
+   height: 10px;
+   width: 25px;   
+   display: flex;
+   align-items: center;
+   padding: 15px;
+   perspective: 100px;
+ }
+
+ img:hover{
+   transform: translateZ(10px);
+ }
+ .slider::before,
+ .slider::after{
+   background: linear-gradient(to right,white)0%,black 100%;
+   width: 15%;
+   position: absolute;
+   height: 100%;
+ }
+ .slider::before{
+   left: 0;
+   top: 0;
+ }
+ .slider::after{
+   right: 0;
+   top: 0;
+   transform: rotate(180deg);
+ }
+
+ second
+
+            .slider-Container{
+               height: 400px;
+               width: 500px;
+               display: flex;
+               overflow: auto;
+               scroll-snap-type: x mandatory;
+             }
+             .slider-Container .slide{
+               scroll-snap-align: start;
+           
+             }
+             .slider-Container img{
+               height: 100%;
+               width: 500px;
+               display: flex;
+               object-fit: cover;
+             }
